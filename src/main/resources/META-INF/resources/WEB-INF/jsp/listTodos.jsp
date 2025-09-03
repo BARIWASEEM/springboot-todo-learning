@@ -22,6 +22,7 @@
                 <th>Description</th>
                 <th>Target Date</th>
                 <th>Is Done?</th>
+                     <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -30,16 +31,9 @@
                     <td>${todo.id}</td>
                     <td>${todo.description}</td>
                     <td>${todo.targetDate}</td>
-                    <td>
-                        <c:choose>
-                            <c:when test="${todo.done}">
-                                <span class="badge bg-success">Yes</span>
-                            </c:when>
-                            <c:otherwise>
-                                <span class="badge bg-danger">No</span>
-                            </c:otherwise>
-                        </c:choose>
-                    </td>
+                   <td>${todo.done}</td>
+                   <td><a href="delete-todo?id=${todo.id}" class="btn btn-warning">Delete ${todo.id}</a></td>
+                    <td><a href="update-todo?id=${todo.id}" class="btn btn-warning">Update ${todo.id}</a></td>
                 </tr>
             </c:forEach>
         </tbody>

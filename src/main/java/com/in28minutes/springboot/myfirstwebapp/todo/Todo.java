@@ -1,5 +1,5 @@
 package com.in28minutes.springboot.myfirstwebapp.todo;
-
+import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 
 public class Todo  {
@@ -7,12 +7,15 @@ public class Todo  {
 		super();
 		this.id = id;
 		this.username = username;
+		
+	  
 		this.description = description;
 		this.targetDate = targetDate;
 		this.done = done;
 	}
 	private int id ;
 	private String username;
+	  @Size(min = 3, max = 20, message = "Name must be between 3 and 20 characters")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
