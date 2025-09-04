@@ -30,6 +30,9 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+	
+	
+	<!--Spring -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -58,7 +61,7 @@
 
 
 
-
+<!--for faster relod -->
 
 
 		<dependency>
@@ -67,13 +70,19 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
-	
+	<!-- ADDING FOR  security-->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
 	<!-- ADDED FOR TODO LIST-->	
 		
 		<dependency>
@@ -106,7 +115,12 @@
 </dependency>
 
 
-<!-- END OF TODO -->		
+<!-- END OF TODO -->	
+
+
+
+
+	
 		
 	</dependencies>
 
