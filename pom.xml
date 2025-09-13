@@ -32,7 +32,27 @@
 	<dependencies>
 	
 	
+	
+	
 	<!--Spring -->
+	
+	
+	<!-- h2 db runtime as we dont want an jar file-->	
+		
+<!-- please update after this rightclick on project goto maven and force to update-->
+<dependency>
+	<groupId>com.h2database</groupId>
+	<artifactId>h2</artifactId>
+	<scope>runtime</scope>
+</dependency>
+
+	<!--we also need jpa that conncets to h2 database -->
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>	
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -113,6 +133,9 @@
 	<artifactId>bootstrap-datepicker</artifactId>
 	<version>1.9.0</version>
 </dependency>
+
+
+
 
 
 <!-- END OF TODO -->	

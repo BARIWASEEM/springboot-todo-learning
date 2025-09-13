@@ -14,32 +14,40 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.in28minutes.springboot.myfirstwebapp.todo.Todo;
+import com.in28minutes.springboot.myfirstwebapp.todo.TodoRepository;
 import com.in28minutes.springboot.myfirstwebapp.todo.TodoService;
 
 import jakarta.validation.Valid;
 
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class TodoController {
+public class TodoJpaController {
 	
-	private TodoService todoService;
+	
 
-
-	public TodoController(TodoService todoService)
+	public TodoJpaController(TodoService todoService, TodoRepository todoRepository)
 	{
 		
 		super();
 		this.todoService =todoService;
+		this.todoRepository =todoRepository;
 	}
 	
+		private TodoService todoService;
+		private TodoRepository todoRepository;
 	
 	@RequestMapping("list-todos")
 	public String listAlltodos(ModelMap model) {
 		
 		//right click and refactor and extrct method to cretae getLoggedInUsername methos
 		String username = getLoggedInUsername(model);
-		List<Todo> todos = todoService.findByUsername(username);
+		
+		
+		//diabling static data List<Todo> todos = todoService.findByUsername(username);
+		
+		//enabling jpa h2 database
+		List<Todo> todos = todoRepository.findByUsername(username);
 		model.addAttribute("todos",todos);
 		return "listTodos";
 	
